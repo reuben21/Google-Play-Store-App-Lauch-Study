@@ -15,7 +15,6 @@ import tkinter as tk
 #from adddata import *
 import time
 import os
-global mcanvas
 import pandas as pd
 import numpy as np
 import tkinter.messagebox as tm

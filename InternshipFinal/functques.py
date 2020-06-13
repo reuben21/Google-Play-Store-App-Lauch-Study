@@ -24,9 +24,6 @@ from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
 import matplotlib.cm as cm
 from collections import OrderedDict
-
-
-global screen
 def adjustWindow(window):
     w = 600  # width for the window size
     h = 600  # height for the window size
