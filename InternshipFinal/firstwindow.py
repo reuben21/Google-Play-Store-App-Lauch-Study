@@ -12,6 +12,9 @@ import functques as fn
 
 from collections import OrderedDict 
 import tkinter as tk
+#from adddata import *
+import time
+import os
 import pandas as pd
 import numpy as np
 import tkinter.messagebox as tm
