@@ -1,12 +1,11 @@
-<h3> Contributer's:
-
+<h1> Contributer's:<br>
 <a href="https://github.com/Rheaserarodrigues">Rhea Sera Rodrigues</a>
 <br>
 <a href="https://github.com/18harsh">Harsh Gandhi</a>
 <br>
-and Myself<h3>
+and Myself<h1>
 <br>
-Note:Run the firstwindow.py script to get started
+Note: Drag the Internship Final Folder in your C: Drive and then Run the firstwindow.py script to get started
 <h1>Google PlayStore App launch Study</h1>
 
 <h3> We did an analysis on the the Google play store App Dataset Answering Various Questions </h3>
