@@ -5,7 +5,8 @@
 <a href="https://github.com/18harsh">Harsh Gandhi</a>
 <br>
 and Myself<h3>
-note:Run the firstwindow.py script to get started
+<br>
+Note:Run the firstwindow.py script to get started
 <h1>Google PlayStore App launch Study</h1>
 
 <h3> We did an analysis on the the Google play store App Dataset Answering Various Questions </h3>
