@@ -51,7 +51,7 @@ def on_key_press(event):
 def functq0():
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
 #    big_frame = Frame(screen,bg='white',width='1010',height=450,bd=4)
 #    big_frame.place(x=10,y=60)
     screen.title("percentage of category")  # mentioning title of the window
@@ -64,7 +64,7 @@ def functq0():
     screen.geometry('%dx%d+%d+%d' % (w, h, x, y))  # set the dimensions of the screen and where it is placed
     screen.resizable(False, False)    # disabling the resize option for the window
     screen.configure(background='white')   # configuring the window
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     df=df.replace(np.NaN,-1)
     catcount={}
     for index in range(len(df)):
@@ -109,7 +109,7 @@ def functq1():
     
     big_frame = Frame(screen,width='1010',height=750)
     big_frame.place(x=10,y=60)
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     
     w=1000
     h=900
@@ -122,7 +122,7 @@ def functq1():
     
     
     df = pd.DataFrame()
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     # dict1={}
     # dict1=pd.value_counts(df['Category'])
     
@@ -184,10 +184,10 @@ def functq2():
      # initializing the tkinter window
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     screen.title("Apps vs Downloads")  # mentioning title of the window
     adjustWindow(screen)  # configuring the window
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     df=df.replace(np.NaN,-1)
     df['Installs'] = df['Installs'].map(lambda x: x.rstrip('+'))
     df['Installs'] = df['Installs'].map(lambda x: ''.join(x.split(',')))
@@ -238,7 +238,7 @@ def functq2():
 def functq3():
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     screen.title("Apps vs Downloads")
     w = 600  # width for the window size
     h = 700  # height for the window size
@@ -249,7 +249,7 @@ def functq3():
     screen.geometry('%dx%d+%d+%d' % (w, h, x, y))  # set the dimensions of the screen and where it is placed
     screen.resizable(False, False)    # disabling the resize option for the window
     screen.configure(background='white')  # configuring the window
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     df=df.replace(np.NaN,0)
     df['Installs'] = df['Installs'].map(lambda x: x.rstrip('+'))
     df['Installs'] = df['Installs'].map(lambda x: ''.join(x.split(',')))
@@ -315,11 +315,11 @@ def functq3():
 def functq4():    
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     screen.title("Rating Vs Category ")  # mentioning title of the window
     adjustWindow(screen)  # configuring the window
     category ={}
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     df=df.replace(np.NaN,0)
     catreview = {}
     for index in range(len(df)):
@@ -372,7 +372,7 @@ def functq5():
 
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     w = 600  # width for the window size
     h = 600  # height for the window size
     ws = screen.winfo_screenwidth()  # width of the screen
@@ -382,7 +382,7 @@ def functq5():
     screen.geometry('%dx%d+%d+%d' % (w, h, x, y))  # set the dimensions of the screen and where it is placed
     screen.resizable(False, False)    # disabling the resize option for the window
     screen.configure(background='white')    # configuring the window
-    df= pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df= pd.read_csv("App-data.csv")
     list2=['More than 30 mb','20-30 mb','10-20 mb']
     
     df['Size'] = df['Size'].map(lambda x: x.rstrip('M'))
@@ -442,7 +442,7 @@ def functq5():
 def functq6():
     global screen  
     screen=Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     w=700
     h=600
     ws=screen.winfo_screenwidth()
@@ -451,7 +451,7 @@ def functq6():
     y=(hs/2)-(h/2)
     screen.geometry("%dx%d+%d+%d"%(w,h,x,y))
     screen.configure(background='white')
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     
     # Data cleaning for "Installs" column
     #print(df['Installs'].head(5))
@@ -578,7 +578,7 @@ def functq6():
 def functq7():
      global screen  
      screen=Tk()
-     screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+     screen.iconbitmap(r"google.ico")
      w=720
      h=600
      ws=screen.winfo_screenwidth()
@@ -587,7 +587,7 @@ def functq7():
      y=(hs/2)-(h/2)
      screen.geometry("%dx%d+%d+%d"%(w,h,x,y))
      screen.configure(background='white')
-     df= pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+     df= pd.read_csv("App-data.csv")
      df=df.replace(np.NaN,0)
      df['Installs'] = df['Installs'].map(lambda x: x.rstrip('+'))
      df['Installs'] = df['Installs'].map(lambda x: ''.join(x.split(',')))
@@ -647,7 +647,7 @@ def functq7_2():
     global screen
   
     screen = tk.Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
 
     big_frame = tk.Frame(screen,bg='white',width='700',height=450,bd=4,relief=RIDGE)
     big_frame.place(x=10,y=60)
@@ -664,7 +664,7 @@ def functq7_2():
 
     tk.Label(screen,text="",bg='white').pack()
    
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
 
     #print(df.head(5))
 
@@ -768,7 +768,7 @@ def functq7_2():
 def functq8():    
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     screen.title("Apps to be most likely downloaded in the Upcoming Years")  # mentioning title of the window
     w = 600  # width for the window size
     h = 800  # height for the window size
@@ -778,7 +778,7 @@ def functq8():
     y = (hs/2) - (h/2)
     screen.geometry('%dx%d+%d+%d' % (w, h, x, y))  # set the dimensions of the screen and where it is placed
     screen.resizable(False, False)      # configuring the window
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     df=df.replace(np.NaN,0)
     
     cat={'SPORTS':0,'ENTERTAINMENT':0,'SOCIAL':0,'NEWS_AND_MAGAZINES':0,'EVENTS':0,'TRAVEL_AND_LOCAL':0,'GAME':0}
@@ -838,9 +838,9 @@ def functq9():
     
     global screen
     
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     screen = tk.Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     big_frame = tk.Frame(screen,bg='white',width='600',height='630',bd=4)
     big_frame.place(x=50,y=60)
     w=700
@@ -855,7 +855,7 @@ def functq9():
     rating = 4.1
     installs = 100000
     
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     print(df['Rating'])
     temp = []
     for index in range(len(df['Rating'])):
@@ -961,10 +961,10 @@ def functq9():
 def functq10_2():
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     screen.title("Apps vs Downloads")  # mentioning title of the window
     adjustWindow(screen)  # configuring the window
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     df['Installs'] = df['Installs'].map(lambda x: x.rstrip('+'))
     df['Installs'] = df['Installs'].map(lambda x: ''.join(x.split(',')))
     
@@ -1007,7 +1007,7 @@ def functq10_2():
 def question11():
     
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     screen.title("Apps vs Downloads")
     w = 1000  # width for the window size
     h = 600  # height for the window size
@@ -1018,7 +1018,7 @@ def question11():
     screen.geometry('%dx%d+%d+%d' % (w, h, x, y))  # set the dimensions of the screen and where it is placed
     screen.configure(background='white')  # configuring the window
     Years=[2010,2011,2012,2013,2014,2015,2016,2017,2018]
-    data = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    data = pd.read_csv("App-data.csv")
     data['Installs'] = data['Installs'].map(lambda x: x.rstrip('+'))
     data['Installs'] = data['Installs'].map(lambda x: ''.join(x.split(',')))
     #print(data['Installs'].head(5))
@@ -1166,7 +1166,7 @@ def function_q13():
     dict_app_relation={}
     
     root = Tk()
-    root.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    root.iconbitmap(r"google.ico")
     big_frame = tk.Frame(root,bg='white',width='700',height='630',bd=4,relief=RIDGE)
     big_frame.place(x=50,y=60)
     w=700
@@ -1180,7 +1180,7 @@ def function_q13():
     root.configure(background='white')
 
     
-    df = pd.read_csv("C:\\InternshipFinal\\user.csv")
+    df = pd.read_csv("user.csv")
     df=df.replace(np.NaN,-999)
     
     dict_app_index_count={}
@@ -1234,7 +1234,7 @@ def function_q13():
 def functq17():
     global screen
     screen = Tk()
-    screen.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+    screen.iconbitmap(r"google.ico")
     w = 600  # width for the window size
     h = 700  # height for the window size
     ws = screen.winfo_screenwidth()  # width of the screen
@@ -1244,7 +1244,7 @@ def functq17():
     screen.geometry('%dx%d+%d+%d' % (w, h, x, y))  # set the dimensions of the screen and where it is placed
     screen.resizable(False, False)    # disabling the resize option for the window
     screen.configure(background='white')    # configuring the window
-    df= pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df= pd.read_csv("App-data.csv")
     list2=['More than 30 mb','20-30 mb','10-20 mb','Less Than 10 mb']
     df['Size'] = df['Size'].map(lambda x: x.rstrip('M'))
     df['Size'] = df['Size'].map(lambda x: str(round((float(x.rstrip('k'))/1024), 1)) if x[-1]=='k' else x)
@@ -1389,7 +1389,7 @@ def searchapp():
     global screen,sample
     
     
-    sample = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    sample = pd.read_csv("App-data.csv")
     screen = tk.Tk()
     w=1300
     h=730

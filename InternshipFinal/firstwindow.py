@@ -50,21 +50,21 @@ def saveing(x, y, z, p):
     global data
 
     value = []
-    if z == 'C:\\InternshipFinal\\App-data.csv':
+    if z == 'App-data.csv':
         date1 = p[0].get()
         month = p[1].get()
         year = p[2].get()
         date = month + ' ' + date1 + ',' + ' ' + year
         print(date)
         dd = data.columns.tolist()
-    elif z == 'C:\\InternshipFinal\\user.csv':
+    elif z == 'user.csv':
         dd = sample.columns.tolist()
 
     for i in x:
         value.append(i.get())
     print(value)
 
-    if z == 'C:\\InternshipFinal\\App-data.csv':
+    if z == 'App-data.csv':
         try:
             connection = pymysql.connect(host="localhost", user="root", password="",
                                          database="googleplaystore")  # database connection
@@ -91,7 +91,7 @@ def saveing(x, y, z, p):
 
         except pymysql.Error:
             tk.messagebox.showinfo('Error', "Database Error")
-    elif z == 'C:\\InternshipFinal\\user.csv':
+    elif z == 'user.csv':
         try:
             connection = pymysql.connect(host="localhost", user="root", password="",
                                          database="googleplaystore")  # database connection
@@ -112,7 +112,7 @@ def saveing(x, y, z, p):
             tk.messagebox.showinfo('Error', "Database Error")
 
         #
-    #    if z=='C:\\InternshipFinal\\App-data.csv':
+    #    if z=='App-data.csv':
     #
     #        value.insert(10,date)
     #        #print(value)
@@ -124,7 +124,7 @@ def saveing(x, y, z, p):
     #        dat=data.append(dp)
     #
     #
-    #    elif z=='C:\\InternshipFinal\\user.csv':
+    #    elif z=='user.csv':
     #
     #        dp=pd.DataFrame([value],columns=dd)
     #        print(dd)
@@ -197,7 +197,7 @@ def add_rev():
     global screen, df, data, sample
 
     dates = []
-    sample = pd.read_csv('C:\\InternshipFinal\\user.csv')
+    sample = pd.read_csv('user.csv')
     header2 = sample.columns.tolist()
     global mcanvas
     val = Label(mcanvas, width=600, height=8, font=("Lucida", 30, 'bold'), fg='black', bg='#102131')
@@ -233,7 +233,7 @@ def add_rev():
             combo.grid(row=3, column=2)
 
     btn_save1 = tk.Button(val, text='Save', state="disabled", fg='#ffffff', width=10,
-                          command=lambda: saveing(txt2, btn_save1, 'C:\\InternshipFinal\\user.csv', ''))
+                          command=lambda: saveing(txt2, btn_save1, 'user.csv', ''))
     btn_validate1 = tk.Button(val, text='Validate', width=10, fg='#ffffff', bg="#102131",
                               command=lambda: validate2(txt2, btn_save1))
     btn_validate1.grid(row=7, column=2)
@@ -341,7 +341,7 @@ def add_app_data():
         dates.append(i)
     for i in range(2010, 2020):
         years.append(i)
-    data = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    data = pd.read_csv("App-data.csv")
     mcanvas.delete("all")
     val = Label(mcanvas, width=600, height=8, font=("Lucida", 30, 'bold'), fg='black', bg='#102131')
     mcanvas.create_window(300, 250, window=val)
@@ -399,7 +399,7 @@ def add_app_data():
 
             combo.grid(row=13, column=1, padx=2, pady=2)
     btn_save = tk.Button(val, text='Save', state="disabled", width=10, bg="#102131", fg="white",
-                         command=lambda: saveing(txt, btn_save, 'C:\\InternshipFinal\\App-data.csv', datecombo))
+                         command=lambda: saveing(txt, btn_save, 'App-data.csv', datecombo))
     btn_validate = tk.Button(val, text='Validate', width=10, bg="#102131", fg="white",
                              command=lambda: validate(txt, btn_save, datecombo))
     btn_validate.grid(row=14, column=1)
@@ -596,7 +596,7 @@ def mont():
     mcan = Canvas(root, width=800, height=700, bg='white')
 
     mcan.place(x=0, y=0)
-    data = pd.read_csv('C:\\InternshipFinal\\App-data.csv')
+    data = pd.read_csv('App-data.csv')
     data = data.replace(np.nan, 'Not Available')
     data['Installs'] = data['Installs'].map(lambda x: x.rstrip('+'))
     data['Installs'] = data['Installs'].map(lambda x: ''.join(x.split(',')))
@@ -635,7 +635,7 @@ def funct10():
     mcanvas.delete("all")
     val = Label(mcanvas, width=600, height=8, font=("Lucida", 30, 'bold'), fg='black', bg='#102131')
     mcanvas.create_window(300, 250, window=val)
-    data = pd.read_csv('C:\\InternshipFinal\\App-data.csv')
+    data = pd.read_csv('App-data.csv')
     data = data.replace(np.nan, 'Not Available')
     cat = StringVar()
     choices = list(data['Category'].unique())
@@ -672,7 +672,7 @@ def sentim():
     scroll1.pack(side='right', fill='both')
     positive.pack(side='left', fill='both')
     updated_app = {}
-    data = pd.read_csv('C:\\InternshipFinal\\user.csv')
+    data = pd.read_csv('user.csv')
     data = data.replace(np.nan, 'Not Available')
     app = {}
 
@@ -735,7 +735,7 @@ def twelve():
     mcanvas.delete("all")
     val = Label(mcanvas, width=600, height=8, font=("Lucida", 30, 'bold'), fg='black', bg='#102131')
     mcanvas.create_window(300, 250, window=val)
-    data = pd.read_csv('C:\\InternshipFinal\\user.csv')
+    data = pd.read_csv('user.csv')
     data = data.replace(np.nan, 'Not Available')
     senti = StringVar()
     choices = ['Positive', 'Negative', 'Same Ratio']
@@ -777,7 +777,7 @@ def revv():
     l = Label(big_frame, text='Negative', width=15, anchor=CENTER)
     l.config(font=("Lucida", 16, 'bold'))
     l.grid(row=0, column=3, padx=5, pady=5)
-    data = pd.read_csv('C:\\InternshipFinal\\user.csv')
+    data = pd.read_csv('user.csv')
     #     print(data)
     data = data.replace(np.nan, 'Not Available')
     x = search.get()
@@ -843,7 +843,7 @@ def fourteen():
     mcanvas.delete("all")
     val = Label(mcanvas, width=600, height=8, font=("Lucida", 30, 'bold'), fg='black', bg='#102131')
     mcanvas.create_window(400, 250, window=val)
-    data = pd.read_csv('C:\\InternshipFinal\\user.csv')
+    data = pd.read_csv('user.csv')
     data = data.replace(np.nan, 'Not Available')
     appli = list(OrderedDict.fromkeys(data['App']))
 
@@ -878,7 +878,7 @@ def year():
 
     mcan.place(x=0, y=0)
 
-    data = pd.read_csv('C:\\InternshipFinal\\App-data.csv')
+    data = pd.read_csv('App-data.csv')
     data = data.replace(np.nan, 'Not Available')
     data['Installs'] = data['Installs'].map(lambda x: x.rstrip('+'))
     data['Installs'] = data['Installs'].map(lambda x: ''.join(x.split(',')))
@@ -922,7 +922,7 @@ def funct16():
     mcanvas.delete("all")
     val = Label(mcanvas, width=600, height=8, font=("Lucida", 30, 'bold'), fg='black', bg='#102131')
     mcanvas.create_window(300, 250, window=val)
-    data = pd.read_csv('C:\\InternshipFinal\\App-data.csv')
+    data = pd.read_csv('App-data.csv')
     data = data.replace(np.nan, 'Not Available')
     d = pd.DatetimeIndex(data['Last Updated'])
     data['year'] = d.year
@@ -943,7 +943,7 @@ def funct16():
 
 def Update_cat():
     df = pd.DataFrame()
-    df = pd.read_csv("C:\\InternshipFinal\\App-data.csv")
+    df = pd.read_csv("App-data.csv")
     # dict1={}
     # dict1=pd.value_counts(df['Category'])
 
@@ -1178,11 +1178,11 @@ width_value = root.winfo_screenwidth()
 height_value = root.winfo_screenheight()
 root.geometry("%dx%d+0+0" % (width_value, height_value))
 root.configure(background='#102131')
-root.iconbitmap(r"C:\\InternshipFinal\\google.ico")
+root.iconbitmap(r"google.ico")
 # =================================top canvas===================================================================
 photocanvas = Canvas(root, width=1355, height=177, bg='#102131')
 photocanvas.place(x=0, y=0)
-myimg = PhotoImage(file="C:\\InternshipFinal\\predictive_analytics_banner.png")
+myimg = PhotoImage(file="predictive_analytics_banner.png")
 photocanvas.create_image(0, 0, anchor=NW, image=myimg)
 photocanvas.image = myimg
 
