@@ -107,8 +107,79 @@ def ques3():
     label = category
     #    print(label)
     val = avg
-    print(val, label)
-    new_list = []
+    new_list1 = []
+    new_list2 = []
     for i in val:
-        new_list.append(int(i))
-    return new_list, label
+        new_list1.append(int(i))
+    for i in label:
+        new_list2.append(str(i))
+    return new_list1, new_list2
+
+
+def ques4():
+    catreview = {}
+    for index in range(len(df)):
+        if df['Category'][index] in catreview:
+            catreview[df['Category'][index]][0] += df['Rating'][index]
+            catreview[df['Category'][index]][1] += 1
+        #            rating+=df['Rating'][index]
+        else:
+            catreview[df['Category'][index]] = [df['Rating'][index], 1]
+    #            rating+=df['Rating'][index]
+    total = 0
+    count = 0
+    for i in df['Rating']:
+        total += i
+        count += 1
+    avg = total / count
+    y = []
+    x = []
+    for i in catreview:
+        if catreview[i][0] / catreview[i][1] >= avg:
+            avgcat = (catreview[i][0] / catreview[i][1])
+            x.append(i)
+            y.append(float(avgcat))
+
+    return x, y
+
+
+def ques5():
+    list2 = ['More than 30 mb', '20-30 mb', '10-20 mb']
+
+    df['Size'] = df['Size'].map(lambda x: x.rstrip('M'))
+    df['Size'] = df['Size'].map(lambda x: str(round((float(x.rstrip('k')) / 1024), 1)) if x[-1] == 'k' else x)
+    df['Size'] = df['Size'].map(lambda x: np.nan if x.startswith('Varies') else x)
+
+    df['Size'] = df['Size'].replace(np.NaN, -999)
+    df['Size'] = df['Size'].astype(float)
+
+    # print(df['Category'].unique())
+
+    # print(df['Size'])
+    df['Installs'] = df['Installs'].str.replace('+', '')
+    df['Installs'] = df['Installs'].str.replace(',', '')
+    df['Installs'] = df['Installs'].astype(int)
+
+    a, b, c = [], [], []
+    for i in range(len(df)):
+        if df["Size"][i] >= 30:
+            a.append(df['Installs'][i])
+        elif 20 <= df["Size"][i] < 30:
+            b.append(df['Installs'][i])
+        elif 10 <= df["Size"][i] < 20:
+            c.append(df['Installs'][i])
+
+    a2 = (sum(b))
+    a3 = (sum(c))
+    a1 = (sum(a))
+
+    list1 = [a1, a2, a3]
+    new_list1 = []
+    for i in list1:
+        new_list1.append(int(i))
+    return new_list1, list2
+
+
+# Question 6 - Harsh
+def ques6():
+    return

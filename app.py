@@ -30,12 +30,37 @@ def answer_to_ques2():
 
 @app.route('/ques3', methods=['GET'])
 def answer_to_ques3():
-    val, label = Questions.ques3()
+    new_list, label = Questions.ques3()
 
     dict = {
-        "val": val,
+        "val": new_list,
         "label": label
     }
+
+    return jsonify(dict)
+
+
+@app.route('/ques4', methods=['GET'])
+def answer_to_ques4():
+    x, y = Questions.ques4()
+
+    dict = {
+        "val": x,
+        "label": y
+    }
+
+    return jsonify(dict)
+
+
+@app.route('/ques5', methods=['GET'])
+def answer_to_ques5():
+    list1, list2 = Questions.ques5()
+
+    dict = {
+        "val": list1,
+        "label": list2
+    }
+
     return jsonify(dict)
 
 
