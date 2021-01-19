@@ -45,8 +45,8 @@ def answer_to_ques4():
     x, y = Questions.ques4()
 
     dict = {
-        "val": x,
-        "label": y
+        "val": y,
+        "label": x
     }
 
     return jsonify(dict)
@@ -55,6 +55,42 @@ def answer_to_ques4():
 @app.route('/ques5', methods=['GET'])
 def answer_to_ques5():
     list1, list2 = Questions.ques5()
+
+    dict = {
+        "val": list1,
+        "label": list2
+    }
+
+    return jsonify(dict)
+
+
+@app.route('/ques6', methods=['GET'])
+def answer_to_ques6():
+    list1, list2 = Questions.ques6()
+
+    dict = {
+        "val": list1,
+        "label": list2
+    }
+
+    return
+
+
+@app.route('/ques7a', methods=['GET'])
+def answer_to_ques7a():
+    list1, list2 = Questions.ques7_a()
+
+    dict = {
+        "val": list1,
+        "label": list2
+    }
+
+    return jsonify(dict)
+
+
+@app.route('/ques7b', methods=['GET'])
+def answer_to_ques7b():
+    list1, list2 = Questions.ques7_b()
 
     dict = {
         "val": list1,

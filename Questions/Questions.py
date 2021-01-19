@@ -1,9 +1,14 @@
+import operator
+
 import pandas as pd
 import numpy as np
 
 df = pd.read_csv(
     "https://raw.githubusercontent.com/reuben21/Google-Play-Store-App-Lauch-Study/master/InternshipFinal/App-data.csv")
 df = df.replace(np.NaN, -1)
+df['Installs'] = df['Installs'].map(lambda x: x.rstrip('+'))
+df['Installs'] = df['Installs'].map(lambda x: ''.join(x.split(',')))
+df['Installs'] = pd.to_numeric(df['Installs'])
 
 
 def ques0():
@@ -48,9 +53,6 @@ def ques1():
 
 
 def ques2():
-    df['Installs'] = df['Installs'].map(lambda x: x.rstrip('+'))
-    df['Installs'] = df['Installs'].map(lambda x: ''.join(x.split(',')))
-    df['Installs'] = pd.to_numeric(df['Installs'])
     list2 = ["More than 5M", "500k-5M", "150k-500k", "50k-150k", "10k-50k"]
     dict1, dict2, dict3, dict4, dict5 = {}, {}, {}, {}, {}
     dict1 = (pd.value_counts(df['Installs'] >= 5000000))
@@ -73,9 +75,6 @@ def ques2():
 
 
 def ques3():
-    df['Installs'] = df['Installs'].map(lambda x: x.rstrip('+'))
-    df['Installs'] = df['Installs'].map(lambda x: ''.join(x.split(',')))
-    df['Installs'] = pd.to_numeric(df['Installs'])
     category = df['Category'].unique()
     list1 = df['Installs']
     ans = []
@@ -182,4 +181,71 @@ def ques5():
 
 # Question 6 - Harsh
 def ques6():
+    return
+
+
+def ques7_a():
+    varwith = []
+    novar = []
+
+    for i in range(len(df['App'])):
+        if df['Android Ver'][i] == 'Varies with device':
+            varwith.append(df['Installs'][i])
+
+        else:
+            novar.append(df['Installs'][i])
+
+    x = (len(varwith), len(novar))
+    #     print(x)
+    android_version_label = ['Varying', 'Not varying']
+    return x, android_version_label
+
+
+def ques7_b():
+    d = pd.DatetimeIndex(df['Last Updated'])
+    df['year'] = d.year
+    df['month'] = d.month
+
+    # 6) For the years 2016,2017,2018 what are the category of apps that have got the most and the least downloads. What is the percentage increase or decrease that the
+
+    dict_years = {}
+
+    for year in df['year'].unique():
+        dict_years[year] = 0
+
+    for index in range(len(df)):
+        dict_years[df['year'][index]] += df['Installs'][index]
+
+    Years = []
+    list_install = []
+
+    for year in dict_years:
+        Years.append(year)
+        list_install.append(dict_years[year])
+
+    # print(Years)
+
+    # print(list_install)
+    new_dict = {}
+    for i in range(0, 9):
+        new_dict.update({Years[i]: list_install[i]})
+    new_dict1 = dict(sorted(new_dict.items(), key=operator.itemgetter(0), reverse=True))
+    print(new_dict1)
+    keys = list(new_dict1.keys())
+    values = list(new_dict1.values())
+    print(keys)
+    print(values)
+
+    return keys, values
+
+
+def ques8():
+    return
+
+
+def ques9():
+    return
+
+
+def ques10():
     return
