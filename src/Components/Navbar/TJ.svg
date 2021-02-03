@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="100" height="100"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(3 3)" fill="none" stroke="#fff3e6" stroke-width="4">
+      <circle cx="47.5" cy="47.5" r="47.5" stroke="none"/>
+      <circle cx="47.5" cy="47.5" r="45.5" fill="none"/>
+    </g>
+    <path id="Union_1" data-name="Union 1" d="M4.65,75.42l3.08-3.5c2.659,3.92,6.23,6.02,10.57,6.02,6.02,0,9.1-3.57,9.1-10.78V37.48H22.68V68H17.5V37.48H9.48V33H17.5V23.48H.28V19H39.9v4.48H22.68V33h9.83V66.95c0,10.36-4.9,15.47-14.279,15.47A16.108,16.108,0,0,1,4.65,75.42Z" transform="translate(30 1)" fill="#fff3e6" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>
