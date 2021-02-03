@@ -46,7 +46,7 @@ class Questions2 extends Component {
             ],
             labels: this.state.key,
         };
-        let fontColor = 'red';
+  
         const options = {
 
             title: {
