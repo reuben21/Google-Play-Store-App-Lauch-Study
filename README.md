@@ -1,3 +1,24 @@
+<h1> Google Play Store App Launch Study </h1>
+<!-- <h3>What was your motivation?</h3>
+<ul>
+  <li> To Learn Python and use its various p </li>
+</ul> -->
+<h3>Why did you build this project?</h3>
+<ul>
+  <li> To Learn and Understand Python </li>
+  <li> To Learn Data Visualization in Python </li>
+</ul>
+<h3>What problem does it solve?</h3>
+<ul>
+  <li> It answers many of the questions regarding the various attributes of the dataset </li>
+</ul>
+<h3>What did you learn?</h3>
+<ul>
+  <li> To use Python's modules to perform various visualization from the Google Play Store Dataset </li>
+  <li> Learned Pandas to read the dataset </li>
+  <li> Learned Matplotlib to make various visualization of the given data to further understand and compare categories well </li>
+</ul>
+
 <h3> Contributer's:<br>
 <a href="https://github.com/Rheaserarodrigues">Rhea Sera Rodrigues</a>
 <br>
@@ -5,6 +26,7 @@
 <br>
 and Myself<h3>
 <br>
+  
 Note: Drag the Internship Final Folder in your C: Drive and then Run the firstwindow.py script to get started
 <h1>Google PlayStore App launch Study</h1>
 
