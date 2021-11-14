@@ -27,7 +27,7 @@
 and Myself<h3>
 <br>
   
-Note: Drag the Internship Final Folder in your C: Drive and then Run the firstwindow.py script to get started
+
 <h1>Google PlayStore App launch Study</h1>
 
 <h3> We did an analysis on the the Google play store App Dataset Answering Various Questions </h3>
