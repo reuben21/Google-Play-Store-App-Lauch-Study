@@ -3,7 +3,7 @@
 <ul>
   <li> To Learn Python and use its various p </li>
 </ul> -->
-<h3>Why did you build this project?</h3>
+<h3>Why did I build this project?</h3>
 <ul>
   <li> To Learn and Understand Python </li>
   <li> To Learn Data Visualization in Python </li>
@@ -12,7 +12,7 @@
 <ul>
   <li> It answers many of the questions regarding the various attributes of the dataset </li>
 </ul>
-<h3>What did you learn?</h3>
+<h3>What did I learn?</h3>
 <ul>
   <li> To use Python's modules to perform various visualization from the Google Play Store Dataset </li>
   <li> Learned Pandas to read the dataset </li>
